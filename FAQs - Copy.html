@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title><i class="bx bx-cloud text-light"></i>shq Quilla_FAQs</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="Bootstrap/css/headers.css">
+  <link rel="stylesheet" href="assets/css/blog.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="fontawesome-free-6.5.1-web/css/all.css">
+    	
+    <link href="Bootstrap/css/navbar.css" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body style="background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(assets/img/services-bg.jpg) fixed center center;, background-size:cover;">
+
+<script type="module">
+	// Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+  import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyA0UvQj8na0IR336AKqKNfC-oVsYwQYSdQ",
+    authDomain: "my-database-ba67d.firebaseapp.com",
+    projectId: "my-database-ba67d",
+    storageBucket: "my-database-ba67d.appspot.com",
+    messagingSenderId: "655686557172",
+    appId: "1:655686557172:web:6bafea306b71b8bfa6eda1"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  
+  const db = getDatabase(app);
+  
+  
+</script>
+
+ <script type="module">
+  
+  document.getElementById("submit").addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form from submitting to a server by default
+    
+    set(ref(db, 'user/' + document.getElementById("username").value),
+{
+	username: document.getElementById("username").value,
+      firstName: document.getElementById("firstName").value,
+      lastName: document.getElementById("lastName").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+})
+      	 
+    alert('Thank you for reaching out. We will get back to you soon!');
+
+    // Reset form after submission
+    event.target.reset();
+  });
+  
+</script>
+
+
+ <form >
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-4" id="username" placeholder="username" required>
+            <label for="firstName">UserName</label>
+            <div class="invalid-feedback">
+                Please enter your  username.
+              </div>
+          </div>
+         <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-4" id="firstname" placeholder="First name" required>
+            <label for="firstName">First name</label>
+            <div class="invalid-feedback">
+                Please enter your First Name.
+              </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-4" id="lastname" placeholder="Last name" required>
+            <label for="lastName">Last name</label>
+            <div class="invalid-feedback">
+                Please enter your Last Name.
+              </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control rounded-4" id="email" placeholder="name@example.com" required>
+            <label for="email">Email address</label>
+            <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-4" id="password" placeholder="Password" required>
+            <label for="Password">Password</label>
+           <div class="invalid-feedback">
+                Your password is required.
+              </div>
+          </div>
+       <a data-bs-toggle="modal" data-bs-target="#modalForgottenpassword" class="text-decoration-none">Forgot your password?</a>
+        <input type="submit" id="submit" class="w-100 mb-2 btn btn-lg rounded-4 btn-outline-warning mt-2" value="Register Account" id="submit">
+           
+     <hr class="my-4">
+          <h2 class="fs-5 fw-bold text-white ms-1 mb-3">Or use a third-party</h2>
+          <a href=" " class="w-100 py-2 mb-2 btn btn-danger rounded-4">
+           <i class="bx bxl-google"></i>
+            Sign in with Google
+          </a>
+          <a href="http://m.facebook" class="w-100 py-2 mb-2 btn btn-primary rounded-4" >
+       <i class="bx bxl-facebook"></i>
+            Sign in with Facebook
+          </a>
+          
+          <hr class="my-4 text-dark">
+          	 
+             <a data-bs-toggle="modal" data-bs-target="#modalSignin" class="w-100 py-2 btn">Already have an Account? Login!</a>
+        </form>
+        
+     
+ <script src="Bootstrap/js/Bootstrap.bundle.min.js"></script>
+       
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
